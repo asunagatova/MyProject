@@ -19,7 +19,6 @@ ${utils().Email().withForeignEmail()}                         | ${200}
 ${utils().Email().withForeignEmailAndRussianName()}           | ${200}
 `('$email', ({email, expected}) => {
     test(`Параметризированный тест с разными почтами`, async () => {
-        console.log(email)
         const response = await api().Emails().getEmail(email);
         expect(response.status).toEqual(expected);
     });
