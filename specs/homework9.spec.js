@@ -9,14 +9,14 @@ describe('Отправляем email', () => {
 });
 
 describe.each`
-email                                                               | expected
-${utils().Email().default()}                                        | ${200}
-${utils().Email().withYandex()}                                     | ${200}
-${utils().Email().withSymbols()}                                    | ${200}
-${utils().Email().withLocalEmail()}                                 | ${200}
-${utils().Email().withALongName()}                                  | ${200}
-${utils().Email().withForeignEmail()}                               | ${200}
-${utils().Email().withForeignEmailAndRussianName()}                 | ${200}
+email                                                         | expected
+${utils().Email().default()}                                  | ${200}
+${utils().Email().withYandex()}                               | ${200}
+${utils().Email().withSymbols()}                              | ${200}
+${utils().Email().withLocalEmail()}                           | ${200}
+${utils().Email().withALongName()}                            | ${200}
+${utils().Email().withForeignEmail()}                         | ${200}
+${utils().Email().withForeignEmailAndRussianName()}           | ${200}
 `('$email', ({email, expected}) => {
     test(`Параметризированный тест с разными почтами`, async () => {
         console.log(email)
